@@ -59,22 +59,14 @@ public class ContactList<person> implements ContactListADT<person> {
 
     private Person removeFirst() {
         Person response = null;
-
-        // store the head node's reference in a temp variable.
+        
         Node<Person> temp = head;
-
-        // check to see if the head isn't null.
         if (head != null) {
-
-            // move the head node's reference to the immediate next node.
             head = head.getNext();
         }
 
-        // return the old head node's data.
-        // check to see if the temp variable isn't null.
         if (temp != null) {
 
-            // decrease the size of the linked list
             size--;
 
             response = temp.getData();
@@ -86,13 +78,8 @@ public class ContactList<person> implements ContactListADT<person> {
 
     private Person removeAfter(Node<Person> node) {
         Person response = null;
-
-        // store the node to be deleted in a temp variable
         Node<Person> temp = node.getNext();
-
-        // check if the temp variable is not null
         if (temp != null) {
-            // change the next reference of the previous node
             node.next = temp.getNext();
 
             // decrease the size of the linked list
