@@ -82,10 +82,8 @@ public class ContactList<person> implements ContactListADT<person> {
         if (temp != null) {
             node.next = temp.getNext();
 
-            // decrease the size of the linked list
             size--;
-
-            // set the data of the temp node (deleted node) to the response
+            
             response = temp.getData();
         }
         if (temp == null) {
@@ -148,7 +146,6 @@ public class ContactList<person> implements ContactListADT<person> {
         if (size != 0) {
             System.out.println("---Here are your all contacts---");
             for (int i = 0; i < size; i++) {
-                // fetch the data for the current node
                 Person data = this.getNode(i).getData();
                 System.out.print(data);
             }
